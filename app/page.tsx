@@ -31,7 +31,8 @@ export default function Home() {
     <main className="min-h-screen">
       {/* Hero Section */}
       <section className="relative">
-        <div className="absolute inset-0 -z-10 bg-[linear-gradient(to_right,#4f4f4f2e_1px,transparent_1px),linear-gradient(to_bottom,#4f4f4f2e_1px,transparent_1px)] bg-[size:14px_24px]" />
+        <div className="absolute inset-0 -z-10 bg-muted/50 bg-[size:14px_24px]" />
+        {/* <div className="absolute inset-0 -z-10 bg-[linear-gradient(to_right,#4f4f4f2e_1px,transparent_1px),linear-gradient(to_bottom,#4f4f4f2e_1px,transparent_1px)] bg-[size:14px_24px]" /> */}
         <div className="mx-auto max-w-6xl px-4 py-20">
           <div className="text-center space-y-4">
             <h1 className="text-4xl font-bold tracking-tighter sm:text-5xl md:text-6xl">
