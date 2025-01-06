@@ -10,6 +10,7 @@ import { SearchState } from "@/type/usernameType";
 interface SearchBarProps {
   onSearchComplete: (results: SearchState) => void;
 }
+const API = process.env.NEXT_PUBLIC_API_URL;
 
 export function SearchBar({ onSearchComplete }: SearchBarProps) {
   const [username, setUsername] = useState("");
@@ -24,7 +25,7 @@ export function SearchBar({ onSearchComplete }: SearchBarProps) {
 
     try {
       const response = await axios.get(
-        `https://sherlock-saas-backend.onrender.com/check_username/?username=${username}`
+        API + `check_username/?username=${username}`
       );
       onSearchComplete({
         isLoading: false,
