@@ -1,9 +1,32 @@
+"use client";
+
 import { SearchBar } from "@/components/search-bar";
-import { SiteResults } from "@/components/site-result";
 
 import { Globe, Search, Shield } from "lucide-react";
+import { useState } from "react";
+
+import { SiteResults } from "@/components/site-result";
+import { SearchState } from "@/type/usernameType";
 
 export default function Home() {
+  const [searchState, setSearchState] = useState<SearchState>({
+    isLoading: false,
+    results: null,
+    error: null,
+  });
+  const [searchedUsername, setSearchedUsername] = useState<string>("");
+
+  const handleSearchComplete = (state: SearchState) => {
+    setSearchState(state);
+    if (!state.isLoading && !state.error) {
+      setSearchedUsername(
+        state.results
+          ? Object.values(state.results)[0].split("/").slice(-1)[0]
+          : ""
+      );
+    }
+  };
+
   return (
     <main className="min-h-screen">
       {/* Hero Section */}
@@ -21,7 +44,7 @@ export default function Home() {
           </div>
 
           <div className="mt-8">
-            <SearchBar />
+            <SearchBar onSearchComplete={handleSearchComplete} />
           </div>
 
           {/* Features */}
@@ -66,7 +89,12 @@ export default function Home() {
       {/* Results Section */}
       <section className="bg-muted/50">
         <div className="mx-auto max-w-6xl px-4 py-16">
-          <SiteResults />
+          <SiteResults
+            isLoading={searchState.isLoading}
+            results={searchState.results}
+            error={searchState.error}
+            searchedUsername={searchedUsername}
+          />
         </div>
       </section>
     </main>
