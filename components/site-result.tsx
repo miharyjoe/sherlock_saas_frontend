@@ -5,8 +5,7 @@ import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Skeleton } from "@/components/ui/skeleton";
 import { UsernameResults } from "@/type/usernameType";
 
-import { ExternalLink } from "lucide-react";
-import Image from "next/image";
+import { ExternalLink, Globe } from "lucide-react";
 
 interface SiteResultsProps {
   isLoading: boolean;
@@ -79,11 +78,14 @@ export function SiteResults({
               <CardTitle className="flex-1 text-base font-medium">
                 {site}
               </CardTitle>
-              <Image
+              <Globe className="h-8 w-8 mx-3" />
+              {/* <Image
                 alt={`${site} icon`}
                 className="h-8 w-8 rounded"
-                src={`/placeholder.svg?height=32&width=32`}
-              />
+                src={`/vercel.saas`}
+                width={8}
+                height={8}
+              /> */}
             </CardHeader>
             <CardContent>
               <div className="flex items-center justify-between">
