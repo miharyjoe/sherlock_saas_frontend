@@ -8,7 +8,7 @@ export function Navbar() {
       <nav className="container flex h-16 items-center">
         <Link href="/" className="flex items-center space-x-2">
           <Image src="/sherlock.png" width={80} height={8} alt="sherlock" />
-          <span className="text-lg font-semibold">Sher-look</span>
+          <span className="text-lg font-semibold">SherlockFinder</span>
         </Link>
         <div className="flex-1" />
         <Button variant="ghost" asChild>
