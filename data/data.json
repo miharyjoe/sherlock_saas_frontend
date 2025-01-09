@@ -1,5 +1,4 @@
 {
-  "$schema": "data.schema.json",
   "1337x": {
     "errorMsg": [
       "<title>Error something went wrong.</title>",
@@ -639,10 +638,7 @@
     "url": "https://discord.com",
     "urlMain": "https://discord.com/",
     "urlProbe": "https://discord.com/api/v9/unique-username/username-attempt-unauthed",
-    "errorMsg": [
-      "{\"taken\":false}",
-      "The resource is being rate limited"
-    ],
+    "errorMsg": ["{\"taken\":false}", "The resource is being rate limited"],
     "request_method": "POST",
     "request_payload": {
       "username": "{}"
@@ -1027,10 +1023,7 @@
   },
   "HackerNews": {
     "__comment__": "First errMsg invalid, second errMsg rate limited. Not ideal. Adjust for better rate limit filtering.",
-    "errorMsg": [
-      "No such user.",
-      "Sorry."
-    ],
+    "errorMsg": ["No such user.", "Sorry."],
     "errorType": "message",
     "url": "https://news.ycombinator.com/user?id={}",
     "urlMain": "https://news.ycombinator.com/",
@@ -2228,9 +2221,7 @@
     "username_claimed": "red"
   },
   "Venmo": {
-    "errorMsg": [
-      "Venmo | Page Not Found"
-    ],
+    "errorMsg": ["Venmo | Page Not Found"],
     "errorType": "message",
     "headers": {
       "Host": "account.venmo.com"
